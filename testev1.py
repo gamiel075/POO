@@ -2,14 +2,11 @@ class Televisão():
 
     def __init__(self,ano_tv,id_tv,marca_tv,preço_tv):
 
-        self.id_tv = id_tv
         self.ano_tv =ano_tv
+        self.id_tv = id_tv
         self.marca_tv = marca_tv
         self.preco_tv = preço_tv
-        self.__private = False #o andescor antes da a entender que ela é privada ou seja, sem alteração,variavel não aberta
-        #a partir desta alteração muitas coisas podem ser feitas , especialmente em contas bancarias.
-
-
+        self.__vendida = False
 
     
     def aumentar_preço(self,valor): 
@@ -28,24 +25,17 @@ class Televisão():
 
 
 
+Tv = Televisão(2023,111,'sansung',1500)
+print((Tv)) # saida = <__main__.Televisão object at 0x0000024F6A59DBD0> estes numeros e o endereço na memoria
+#mas ao dar mais um print o espaço muda,pois o garbage collect muda automaticamente,porém
+#<__main__.Televisão object at 0x0000022B8099DBD0>
+#porém quando:
+oi = Tv
+print(oi)
+#saida:<__main__.Televisão object at 0x0000022B8099DBD0> a locação fica na mesma
+print(oi.marca_tv) #saida:sansung
 
-tv1 = Televisão(1114665,2023,'lg',1500)
-
-#saida = [2023, 'lg', 1114665, 1500]
-#['ID do aparelho', 'marca', 'ano de fabricação', 'preço']
-print(type(tv1.__private)) #saida = False
-
-
-
-
-
-
-
-print(tv1.__status_privado)
-
-
-    
- 
- 
-    
-        
+#como acabr com este vinculo
+'oi = None'
+oi = None
+print(oi)
