@@ -9,7 +9,7 @@ class criar():
         self._status = status
 
 
-    def __informar(self): #existe mas não da pra usar
+    def informar(self): #existe mas não da pra usar
 
        return print(self._nome)  ,print(self._senha) ,print(self._status)
     
@@ -23,7 +23,7 @@ class criar():
 
 
 meunome = criar('gabriel',20)
-  
+print(meunome._nome)
 
 #nada ver 
 

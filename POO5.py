@@ -17,7 +17,7 @@ class simular():
         itens_lost = itens_avariados + itens_perdidos
         qtd_restante -= itens_lost
 
-        dados = [                                                                           #vc pode passar essas informações em porcento
+        dados = [                                                                            #vc pode passar essas informações em porcento
             ['armazenamento total',self.capacidade_estoque],                                # ou por exemplo colocar lost e dai o usuario clica para saber mais detalhes
             ['armazenamento',self.qtd_armazenada],                                          #lembra dos processos ddo meli, de que forma pode-se catalogar o estoque 
             ['itens lost',itens_lost]]
@@ -26,7 +26,7 @@ class simular():
         print(df)
 
         def set_capacidade():
-             
+            pass 
 
 
 

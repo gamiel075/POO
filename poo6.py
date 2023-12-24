@@ -1,20 +1,29 @@
 #testar get de uma forma siples
 
 
+#atraves disto, pode -se estabelecer protocolos de mudança.
 
 
 class pessoa():
 
     def __init__(self,nome,idade):
         
-        self._nome = nome
+        self.nome = nome
         self._idade = idade
         self._status = False
+
+    @property
+    def marca(self):
+        return self._nome
+    
+    @marca.setter
+    def nome(self,novo__nome):
+        self._nome = novo__nome
 
 
     def saudar(self):
 
-        print(f'ola meu nome é {self._nome} e tenho {self._idade} anos')
+        print(f'ola meu nome é {self.nome} e tenho {self._idade} anos')
         print(self._status)
     
 
@@ -48,26 +57,19 @@ class pessoa():
        
     def nova_saudaçao(self):
 
-        print(f'ola meu nome é {self._nome} e tenho {self._idade}')
+        print(f'ola meu nome é {self.__nome} e tenho {self._idade}')
 
     
 
 
-
-
-
 myam = pessoa('gabriel',20)
+myam.nome = 'LG'
+
+print(myam.nome )
+
 myam.saudar()
 print('-----' * 10)
-#primeira saida: ola meu nome é gabriel e tenho 20 anos . false
-new_name = myam.set_nome('miguel')
-print(myam.get_nome())
-new_age = myam.set_idade(11)
-print(myam.get_idade())
-new_status = myam.set_status(True)
-print(myam.get_status())
-print('-----' * 10)
-myam.nova_saudaçao()
+
 
 
 
