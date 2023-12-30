@@ -1,12 +1,25 @@
 class Televisão():
 
+    number_of_users = 0
+    __slots__ = ['ano_tv', 'id_tv', 'marca_tv', 'preco_tv', '_private']
+
+    
+
     def __init__(self,ano_tv,id_tv,marca_tv,preço_tv):
 
-        self.id_tv = id_tv
         self.ano_tv =ano_tv
+        self.id_tv = id_tv
         self.marca_tv = marca_tv
         self.preco_tv = preço_tv
-        self._private = False 
+        self._private = False
+        Televisão.number_of_users += 1
+
+
+
+
+    @classmethod
+    def consult(cls):
+        print(Televisão.number_of_users)
 
     @property
     def marca(self):
@@ -32,6 +45,13 @@ class Televisão():
         'print(list(tv_dados.values()))'
         'print(list(tv_dados.keys()))'
 
-tv1 = Televisão('2023',555,'sansung',1500)
-tv1.marca_tv = 'lg'
+tv1 = Televisão(2023,555,'sansung',1500)
 tv1.consultar() 
+
+Televisão.consult()
+# Televisão.voltagem = 220 #entrou como atribito, para isso serve _slots_
+#em seguida da erro por conta do slots
+
+print(dir(Televisão))
+print('=-----' * 10)
+

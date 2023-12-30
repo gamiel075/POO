@@ -116,8 +116,6 @@ class Logisticontrol():
             print('Alteração não confirmada.')
 
 
-
-
     @property
     def password(self):
         return self.__password
