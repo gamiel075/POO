@@ -7,7 +7,7 @@ class Encomenda:
         self._valor = valor
 
     def taxa(self):
-        return self._valor * 0.5
+        return self._valor * 0.5 
     
 
 class Carro(Encomenda):
@@ -47,13 +47,7 @@ class Peças(Encomenda):
         v1 = self._valor * 0.5 * taxa
         self._valor += v1 
         return self._valor
-
-
-        
-
-        
  
-        
      
 
 carro_1 = Carro(101, 'Rafael', 'Maio', 18000, 'Fusca', 1998, 1000)
@@ -89,6 +83,7 @@ peca_14 = Peças(214, 'Raul', 'Agosto', 700, 'Corpo de Borboleta', 'KLM789', 'Us
 
 p1_taxa = peca_1.taxa()   
 print(p1_taxa)
+print(peca_1._valor )
 
 
 

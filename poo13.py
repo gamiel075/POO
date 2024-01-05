@@ -43,9 +43,30 @@ class Secretaria(Funcionarios):
 
     def bonus(self):
         return self._salario * 1.2 + self.qtd_gerentes * 0.5
+    
 
+class Engenheiro:
+    def __init__(self,nome):
+        self._nome = nome
 
     
+
+
+class GestãoDeBonus():
+
+    def __init__(self,total_bonifiacacoes = 0 ):
+        self._total_bonifiacoes = total_bonifiacacoes
+
+    def registra(self,Funcionario):
+        if(hasattr(Funcionario,'bonus()')):
+            self._total_bonifiacoes += Funcionario.bonus()
+        else:
+            print('o objeto não tem essa implementação')
+
+
+    @property
+    def total_bonifiacacoes(self):
+        print(self._total_bonifiacoes)
 
 
 
@@ -74,6 +95,19 @@ print(s2_bonus)
 
 
 
+gestão = GestãoDeBonus()
+gestão.registra(g1)
+gestão.registra(s1)
+print(gestão.total_bonifiacacoes)
 
+s1_bonus =  s1.bonus()
+g1_bonus = g1.bonus()
+print(s1_bonus)
+print(g1_bonus)
+
+
+e1 =Engenheiro('thiago')
+gestão.registra(e1)
+#saida o objeto não tem essa implementação
 
 
