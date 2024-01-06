@@ -70,6 +70,20 @@ class GestãoDeBonus():
 
 
 
+class ClubeGerentes:
+
+    def __init__(self,nome,funcionários):
+        self.nome = nome
+        self._funcionarios = funcionários
+
+    def listagem(self):
+        return self._funcionarios
+    
+    def tamanho(self):
+        return len(self._funcionarios)
+
+
+
 
 g1 = Gerente('claudio',124643,5000,333,7)
        #limitar mudanças e colocar validadores 
