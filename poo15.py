@@ -89,6 +89,8 @@ class GestãoDeBonus():
         else:
             print('o objeto não tem essa implementação')
 
+    #esse conceito pode servir para B.I porque pode se estudar e avaliar as alterações re
+
 
     @property
     def total_bonifiacacoes(self):
@@ -111,6 +113,30 @@ for g in clube:
 print(len(clube))
 print(clube[1].get_nome())
 #saida:maria
+
+from abc import ABC
+from collections.abc import MutableSequence
+
+class Secretaryclub(MutableSequence):
+    def __delitem__(self,item):
+        print('delete')
+
+    def __getitem__(self,item):
+        print('coleta')
+
+    def __len__(self) -> int:
+        return super().__len__()
+    def __setitem__(self):
+        return print('len')
+    
+    def insert(self):
+        print('')
+
+#cs = Secretaryclub() #saida antes: TypeError: Can't instantiate abstract class Secretaryclub with abstract methods __delitem__, __getitem__, __len__, __setitem__, insert
+#cs = Secretaryclub() saida depois  TypeError: Can't instantiate abstract class Secretaryclub with abstract methods __len__, __setitem__, insert#
+cs = Secretaryclub() #saida normal pois nos estavamos obrigando ela a ter uma interface
+
+
 
 
 
